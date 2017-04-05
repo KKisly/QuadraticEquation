@@ -1,0 +1,16 @@
+Quadratic Equation Assignment
+
+Brief description of submitted files: 
+
+Solver.java
+- contains two nested classes:
+  a) Reader - to handle stdin
+  b) QaSolver - to perform appropriate math
+- Includes main() method for running application
+- Prints output with test cases
+
+input.txt
+- source file with test cases
+
+RUN
+- file with copy-pasted results of script run

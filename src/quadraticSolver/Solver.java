@@ -66,12 +66,15 @@ class QaSolver {
 
 		if (Dicmnt > 0) {// discriminant is greater than zero ==> two roots of quadratic equation
 			rootFirst = ( - b + Math.sqrt(Dicmnt))/(2*a);
+			rootFirst  = (double)Math.round(rootFirst * 10) / 10;
 			rootSecond = (- b - Math.sqrt(Dicmnt))/(2*a);
+			rootSecond = (double)Math.round(rootSecond * 10) / 10;
 			Double[] array = {rootFirst, rootSecond};
 			return array;
 		}
 		else if (Dicmnt == 0) {//discriminant is equals zero ==> one roots of quadratic equation
 			rootFirst = (- b + Math.sqrt(Dicmnt))/(2*a);
+			rootFirst  = (double)Math.round(rootFirst * 10) / 10;
 			Double[] array = {rootFirst};
 			return array;
 		}		

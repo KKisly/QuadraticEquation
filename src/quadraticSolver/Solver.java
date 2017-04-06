@@ -33,7 +33,8 @@ class Reader {
 				data = inputStream.nextLine();
 				values = (data.split(" "));
 				for (int k = 0; k < 3; k++) {
-					numvalues [l][k] = Double.parseDouble(values[k]);//converting parsed string values to Double	
+					//numvalues [l][k] = Double.valueOf(values[k]);
+				numvalues [l][k] = Double.parseDouble(values[k]);//converting parsed string values to Double	
 				}		
 			}
 		}
@@ -59,22 +60,22 @@ class QaSolver {
 	/**
 	 * class containing method for solving quadratic equattion
 	 */
-	Double rootFirst, rootSecond, Dicmnt, a, b, c;
+Double rootFirst, rootSecond, Dicmnt, a, b, c;
 
 	public Double[] qaSolver(Double a, Double b, Double c) {
 		Dicmnt = b * b - 4 * a * c;
 
 		if (Dicmnt > 0) {// discriminant is greater than zero ==> two roots of quadratic equation
 			rootFirst = ( - b + Math.sqrt(Dicmnt))/(2*a);
-			rootFirst  = (double)Math.round(rootFirst * 10) / 10;
+			//rootFirst  = (long)Math.round(rootFirst * 10) / 10;
 			rootSecond = (- b - Math.sqrt(Dicmnt))/(2*a);
-			rootSecond = (double)Math.round(rootSecond * 10) / 10;
+			//rootSecond = (long)Math.round(rootSecond * 10) / 10;
 			Double[] array = {rootFirst, rootSecond};
 			return array;
 		}
 		else if (Dicmnt == 0) {//discriminant is equals zero ==> one roots of quadratic equation
 			rootFirst = (- b + Math.sqrt(Dicmnt))/(2*a);
-			rootFirst  = (double)Math.round(rootFirst * 10) / 10;
+			//rootFirst  = (long)Math.round(rootFirst * 10) / 10;
 			Double[] array = {rootFirst};
 			return array;
 		}		
@@ -92,7 +93,8 @@ public class Solver {
 	 */
 
 	public static void main(String[] args) throws FileNotFoundException {
-		final String FILENAME = "resources/input.txt";
+		//final String FILENAME = "resources/input.txt";
+		String FILENAME = args[0];
 		Reader parser = new Reader(FILENAME); //instantiation of object of class Reader which contains Double array
 
 		Double [][] dataSet = parser.getValues();//passing Double array from object to local array

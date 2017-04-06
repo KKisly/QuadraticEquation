@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.util.Scanner;
+import java.io.FileInputStream;
 
 class Reader {
 	/**
@@ -16,17 +17,20 @@ class Reader {
 	//Double numdata;
 
 	public Reader(String FILENAME) throws FileNotFoundException {
-
-		File file = new File(FILENAME);
-		Scanner inputStreamArray = new Scanner(file);
+		
+		//File file = new File(FILENAME);
+		FileInputStream rep = new FileInputStream(FILENAME);
+		System.setIn(rep);
+		Scanner inputStreamArray = new Scanner(System.in);
 		while (inputStreamArray.hasNextLine()) { //defining number of lines in source file 
 			inputStreamArray.nextLine();
 			i++;
 		}
 		inputStreamArray.close();
-		Scanner inputStream = new Scanner(file);
+		FileInputStream repstr = new FileInputStream(FILENAME);
+		System.setIn(repstr);
+		Scanner inputStream = new Scanner(System.in);
 		while (inputStream.hasNextLine()) {
-
 			numvalues = new BigDecimal[i][3]; 
 			for (int l = 0; l < i; l++) { //populating two dimensional Double array
 				data = inputStream.nextLine();

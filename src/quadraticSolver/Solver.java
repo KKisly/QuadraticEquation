@@ -14,7 +14,8 @@ public class Solver {
 	public static void main(String[] args) throws FileNotFoundException {
 		//final String FILENAME = "resources/input.txt";
 		String FILENAME = args[0];
-		Reader parser = new Reader(FILENAME); //instantiation of object of class Reader which contains Double array
+		Reader parser = new Reader(FILENAME);
+		//instantiation of object of class Reader which contains Double array
 
 		BigDecimal [][] dataSet = parser.getValues(); //passing Double array from object to local array
 
